@@ -33,6 +33,8 @@ const resolvers = {
       return { user, token };
     },
     login: async (parent, args) => {
+      console.log("Hit Login Functionailty");
+      console.log("Args :", args);
       const user = await User.findOne({ email: args.email });
       if (!user) {
         throw new AuthenticationError("Can't find this user");
@@ -47,6 +49,9 @@ const resolvers = {
       return {token, user};
     },
     saveBook: async (parent, args, context) => {
+      console.log("Hit Login Functionailty");
+      console.log("Args :", args);
+      console.log("Context :", context);
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user.id },

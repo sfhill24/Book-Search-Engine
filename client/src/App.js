@@ -4,12 +4,15 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import LoginForm from './components/LoginForm';
+import SignupForm from './components/SignupForm';
 
 
 
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: '/graphql',
+ uri: 'http://localhost:3001/graphql',
 });
 
 const client = new ApolloClient({

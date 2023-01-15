@@ -1,5 +1,5 @@
-import gql from "@apollo/client";
-import bookSchema from "../../../server/models/Book";
+import { gql } from "@apollo/client";
+
 
 export const LOGIN_USER = gql`
     mutation($email: String!, $password: String!) {
@@ -35,7 +35,7 @@ export const SAVE_BOOK = gql`
 `;
 
 
-  export const REMOVE_USER = gql`
+export const REMOVE_USER = gql`
   mutation($bookId: String!)  {
     removeBook(bookId: $bookId) {
       bookCount
@@ -43,9 +43,10 @@ export const SAVE_BOOK = gql`
     }
 }
   `;
-  
 
 
 
 
 
+
+export default 'gql';
