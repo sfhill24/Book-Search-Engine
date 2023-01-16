@@ -1,5 +1,9 @@
   # Book Search Engine
 
+ ![Screenshot 2023-01-15 213100](https://user-images.githubusercontent.com/49098706/212615858-a5061fd2-d2cc-461a-9851-2192a1c75aef.png)
+
+  Website Link: https://aqueous-fjord-46086.herokuapp.com/
+
   ## Description
   USER STORY<br/>
   AS AN avid reader<br /> 
@@ -52,11 +56,6 @@ THEN I am logged out of the site and presented with a menu with the options Sear
   React</br>
   Bcrypt</br>
   Jsonwebtoken</br>
-
-  ## Usage
-  ![Screenshot 2023-01-15 213100](https://user-images.githubusercontent.com/49098706/212615858-a5061fd2-d2cc-461a-9851-2192a1c75aef.png)
-
-  Website Link: https://aqueous-fjord-46086.herokuapp.com/
 
   ## Questions
  Find me on GitHub: [sfhill24](https://github.com/sfhill24)<br /> 
