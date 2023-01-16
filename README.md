@@ -1,7 +1,5 @@
   # Book Search Engine
 
-  ![badge](https://img.shields.io/badge/License-MIT-blue.svg)<br />
-
   ## Description
   USER STORY<br/>
   AS AN avid reader<br /> 
@@ -56,7 +54,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
   Jsonwebtoken</br>
 
   ## Usage
-  ![Screenshot 2023-01-15 213100](https://user-images.githubusercontent.com/49098706/212585976-28052cbe-ea1d-4211-9e6b-6d7c137895af.png
+  ![Screenshot 2023-01-15 213100](https://user-images.githubusercontent.com/49098706/212615858-a5061fd2-d2cc-461a-9851-2192a1c75aef.png)
 
   Website Link: https://aqueous-fjord-46086.herokuapp.com/
 
