@@ -4,18 +4,14 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    me: async (parent, args) => {
-      const foundUser = await User.findOne({
-        $or: [{ _id: args._id }, { username: args.username }],
-      })
-        .select("-__v -password")
-        .populate("savedBooks");
+    me: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id)
+          .select('-__v -password');
 
-      if (!foundUser) {
-        throw new AuthenticationError("Not logged in");
+        return user;
       }
-
-      return foundUser;
+      throw new AuthenticationError('Not logged in');
     },
   },
   Mutation: {

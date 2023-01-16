@@ -4,17 +4,17 @@ import { useQuery, useMutation } from '@apollo/client';
 //import { getMe, deleteBook } from '../utils/API';
 import { GET_ME } from '../utils/queries';
 import Auth from '../utils/auth';
-import { removeBookId } from '../utils/localStorage';
+import { removeBookId, saveBookIds } from '../utils/localStorage';
 import { REMOVE_BOOK } from '../utils/mutations';
 
 const SavedBooks = () => {
-  const [userData, setUserData] = useState({});
+  //const [userData, setUserData] = useState({});
   const { loading, data } = useQuery(GET_ME);
   const [removeBook] = useMutation(REMOVE_BOOK);
-  let currentUser = data?.me || {};
-  console.log(currentUser);
+  let userData = data?.me || {};
+  console.log(userData);
 
-  if (!currentUser?.username) {
+  if (!userData?.username) {
     return (
       <h6>"You must be logged in!</h6>
     );
@@ -28,11 +28,15 @@ const SavedBooks = () => {
     }
 
     try {
-      const { data } = await removeBook({
+      const response = await removeBook({
         variables: {
-          bookId
+          bookId: bookId
         },
       });
+
+      if (!response) {
+        throw new Error("something went wrong!");
+      }
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
     } catch (err) {
@@ -44,6 +48,9 @@ const SavedBooks = () => {
   if (loading) {
     return <h2>LOADING...</h2>;
   }
+
+const savedUserBooks = userData.savedBooks.map((book) => book.bookId);
+saveBookIds(savedUserBooks);
 
   return (
     <>
